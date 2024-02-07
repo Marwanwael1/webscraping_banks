@@ -4,9 +4,7 @@ This Python script conducts web scraping on a Wikipedia page listing the largest
 
 ## Prerequisites
 
-Ensure that you have Python installed, and install the required libraries using:
-
-```bash
+Ensure that you have Python installed, and install the required libraries using
 pip install beautifulsoup4 requests pandas numpy
 
 ## Process Steps
