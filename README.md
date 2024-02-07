@@ -1,47 +1,32 @@
-ETL Process for Data Files
-Welcome to the ETL script for data files! This Python script is designed to perform the Extract, Transform, and Load (ETL) process on various data file formats, including CSV, JSON, and XML. The script utilizes the pandas library for data manipulation and xml.etree.ElementTree for XML parsing.
+# Web Scraping and ETL Process for Largest Banks
 
-Introduction
-In the world of data processing, ETL plays a crucial role in managing and transforming data from diverse sources into a usable and consistent format. This script exemplifies a simple ETL process, demonstrating how to extract data from different file formats, apply transformations, and finally load the processed data into a new CSV file.
+This Python script conducts web scraping on a Wikipedia page listing the largest banks and performs an Extract, Transform, Load (ETL) process. The extracted data is transformed and loaded into both a CSV file and an SQLite database.
 
-How to Use
-Clone the Repository:
-Clone the repository to your local machine using Git:
+## Prerequisites
 
+Ensure that you have Python installed, and install the required libraries using:
 
+```bash
+pip install beautifulsoup4 requests pandas numpy
 
-git clone https://github.com/your-username/your-repository.git
+## Process Steps
+# Extraction (extract):
 
-cd your-repository
+Web scraping extracts information about the largest banks from the Wikipedia page.
+# Transformation (transform):
 
-Install Dependencies:
+# Currency conversion is applied to the 'Market_Cap' column.
+# New columns for market cap in GBP, EUR, and INR are added.
+# Loading (load_to_csv and load_to_db):
 
-Ensure you have the necessary dependencies installed:
+# Transformed data is loaded into a CSV file (banks.csv).
+# Data is loaded into an SQLite database (Banks.db) as a 'Largest_banks' table.
+# Querying (run_query):
 
+Example SQL queries are executed on the database:
+SELECT * FROM Largest_banks
+SELECT AVG(MC_GBP_Billion) FROM Largest_banks
+SELECT Bank_Name FROM Largest_banks LIMIT 5
+Completion:
 
-pip install pandas
-
-Run the Script:
-
-Execute the ETL script with the following command:
-
-python etl_script.py
-Review Output:
-The transformed data will be saved in a file named transformed_data.csv. Check the log_file.txt for a detailed log of the ETL process.
-
-Script Overview
-etl_script.py:
-
-Main script implementing the ETL process.
-log_file.txt:
-
-Log file capturing the progress and timestamps during the ETL process.
-transformed_data.csv:
-
-Output CSV file containing the transformed data.
-Notes
-The script assumes that the data files (CSV, JSON, and XML) are located in the same directory as the script. Adjust file paths accordingly if your files are in a different location.
-
-Ensure the required Python dependencies are installed before running the script.
-
-Enjoy exploring and adapting this ETL script for your data processing needs!
+The process concludes, and the SQL connection is closed.
