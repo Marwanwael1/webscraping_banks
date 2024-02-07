@@ -7,19 +7,19 @@ This Python script conducts web scraping on a Wikipedia page listing the largest
 Ensure that you have Python installed, and install the required libraries using
 pip install beautifulsoup4 requests pandas numpy
 
-## Process Steps
-# Extraction (extract):
+# Process Steps
+## 1)Extraction (extract):
 
 Web scraping extracts information about the largest banks from the Wikipedia page.
-# Transformation (transform):
+## 2)Transformation (transform):
 
-# Currency conversion is applied to the 'Market_Cap' column.
-# New columns for market cap in GBP, EUR, and INR are added.
-# Loading (load_to_csv and load_to_db):
+## 3)Currency conversion is applied to the 'Market_Cap' column.
+## 4)New columns for market cap in GBP, EUR, and INR are added.
+## 5)Loading (load_to_csv and load_to_db):
 
-# Transformed data is loaded into a CSV file (banks.csv).
-# Data is loaded into an SQLite database (Banks.db) as a 'Largest_banks' table.
-# Querying (run_query):
+## 6)Transformed data is loaded into a CSV file (banks.csv).
+## 7)Data is loaded into an SQLite database (Banks.db) as a 'Largest_banks' table.
+## 8)Querying (run_query):
 
 Example SQL queries are executed on the database:
 SELECT * FROM Largest_banks
